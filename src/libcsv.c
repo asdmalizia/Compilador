@@ -381,12 +381,12 @@ csv_parse(struct csv_parser *p, const void *s, size_t len, void (*cb1)(void *, s
             SUBMIT_CHAR(p, c);
             spaces = 0;
           }
-        } else if (c == delim) {  /* Comma */
-          if (quoted) {
-            SUBMIT_CHAR(p, c);
-          } else {
-            SUBMIT_FIELD(p);
-          }
+        // } else if (c == delim) {  /* Comma */
+        //   if (quoted) {
+        //     SUBMIT_CHAR(p, c);            
+        //   } else {
+        //     SUBMIT_FIELD(p);
+          // }
         } else if (is_term ? is_term(c) : c == CSV_CR || c == CSV_LF) {  /* Carriage Return or Line Feed */
           if (!quoted) {
             SUBMIT_FIELD(p);

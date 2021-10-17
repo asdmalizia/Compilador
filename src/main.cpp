@@ -3,6 +3,8 @@
 #include <stdlib.h> 
 
 #include "analisador_lexico.h"
+#include "analisador_sintatico.h"
+#include "analisador_de_escopo.h"
 #include <errno.h>
 
 void ERROR_FUNC(){
@@ -13,7 +15,7 @@ void ERROR_FUNC(){
 int main(int argc, char const *argv[])
 {
     // BEGIN command line inputs
-    std::string input_file_name = "input";
+    std::string input_file_name = "programa";
     std::string output_file_name = "output";
     if (argc == 2) {
         if (!strcmp(argv[1],"-o")) {
@@ -41,32 +43,32 @@ int main(int argc, char const *argv[])
         ERROR_FUNC();
     }
     printf("input_file_name: %s\noutput_file_name: %s\n", input_file_name.c_str(), output_file_name.c_str());
-    // END command line inputs
 
     program = fopen(input_file_name.c_str(), "r");
     if (!program) {
         fprintf(stderr, "Failed to open %s: %s\n", input_file_name.c_str(), strerror(errno));
     }
-    do{
-        token = nextToken();
-        printf("%d ", token);
-        if (token == CHARACTER){
-            printf("CHAR ");
-            printf("id=%d %c ", tokenSecundario, getCharConst(tokenSecundario));
-        }
-        if (token == NUMERAL){
-            printf("INT ");
-            printf("id=%d %d ", tokenSecundario, getIntConst(tokenSecundario));
-        }
-        if (token == STRINGVAL){
-            printf("STRING ");
-            printf("id=%d %s ", tokenSecundario, getStringConst(tokenSecundario).c_str());
-        }
-        if (token == IDT){
-            printf("ID ");
-            printf("id=%d ", tokenSecundario);
-        }
-        printf("\n");
-    } while(token != END);
+    // do{
+    //     token = nextToken();
+    //     printf("%d ", token);
+    //     if (token == CHARACTER){
+    //         printf("CHAR ");
+    //         printf("id=%d %c ", tokenSecundario, getCharConst(tokenSecundario));
+    //     }
+    //     if (token == NUMERAL){
+    //         printf("INT ");
+    //         printf("id=%d %d ", tokenSecundario, getIntConst(tokenSecundario));
+    //     }
+    //     if (token == STRINGVAL){
+    //         printf("STRING ");
+    //         printf("id=%d %s ", tokenSecundario, getStringConst(tokenSecundario).c_str());
+    //     }
+    //     if (token == IDT){
+    //         printf("ID ");
+    //         printf("id=%d ", tokenSecundario);
+    //     }
+    //     printf("\n");
+    // } while(token != END);
+    parse();
     return 0;
 }

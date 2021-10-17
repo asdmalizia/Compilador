@@ -2,4 +2,4 @@
 *.bak
 .DS_STORE
 .vscode
-*.exe
+*.exe*

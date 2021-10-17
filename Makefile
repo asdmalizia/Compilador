@@ -45,5 +45,9 @@ build/src/libcsv.o: src/libcsv.c
 # makedepend src/*/* src/*.cpp -Iinclude -pbuild/
 # DO NOT DELETE
 build/src/analisadores/analisador_lexico.o: include/analisador_lexico.h
-build/src/main.o: include/analisador_lexico.h
+build/src/analisadores/analisador_sintatico.o: include/analisador_sintatico.h
+build/src/analisadores/analisador_sintatico.o: include/analisador_lexico.h
+build/src/analisadores/analisador_sintatico.o: include/csv.h
+build/src/main.o: include/analisador_lexico.h include/analisador_sintatico.h
+build/src/main.o: include/analisador_de_escopo.h 
 build/src/libcsv.o: include/csv.h
