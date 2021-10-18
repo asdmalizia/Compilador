@@ -48,27 +48,6 @@ int main(int argc, char const *argv[])
     if (!program) {
         fprintf(stderr, "Failed to open %s: %s\n", input_file_name.c_str(), strerror(errno));
     }
-    // do{
-    //     token = nextToken();
-    //     printf("%d ", token);
-    //     if (token == CHARACTER){
-    //         printf("CHAR ");
-    //         printf("id=%d %c ", tokenSecundario, getCharConst(tokenSecundario));
-    //     }
-    //     if (token == NUMERAL){
-    //         printf("INT ");
-    //         printf("id=%d %d ", tokenSecundario, getIntConst(tokenSecundario));
-    //     }
-    //     if (token == STRINGVAL){
-    //         printf("STRING ");
-    //         printf("id=%d %s ", tokenSecundario, getStringConst(tokenSecundario));
-    //     }
-    //     if (token == IDT){
-    //         printf("ID ");
-    //         printf("id=%d ", tokenSecundario);
-    //     }
-    //     printf("\n");
-    // } while(token != ENDFILE);
     parse();
     return 0;
 }

@@ -83,3 +83,8 @@ function factorial(n: integer) : integer {
 </td>
 </tr>
 </table>
+
+#### Clean
+Clean the generated files executing:
+
+`make clean`

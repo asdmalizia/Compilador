@@ -44,20 +44,14 @@ extern t_token token;
 extern int tokenSecundario;
 extern FILE* program;
 
-// Busca entre as palavras reservadas
+
 t_token searchKeyWord(string name);
-
-// busca um token secundário
 int searchName(string name);
-
 int addCharConst(char c);
 int addIntConst(int n);
 int addStringConst(string s);
-
 char getCharConst(int n);
 int  getIntConst(int n);
 char* getStringConst(int n);
-
 char readChar();
-
 t_token nextToken();

@@ -1,13 +1,5 @@
-//
-//  analisador_sintatico.cpp
-//  TrabalhoCompiladores
-//
-//  Created by Arthur Fernandes on 10/24/15.
-//  Copyright © 2015 Arthur Fernandes. All rights reserved.
-//
-
 #include "analisador_sintatico.hpp"
-// #include "analisador_escopo.hpp"
+#include "analisador_escopo.hpp"
 #include <stack>
 #include <vector>
 #include <unordered_map>
@@ -63,7 +55,7 @@ void parse(){
                     stateStack.pop();
                 }
                 stateStack.push(actionTable[stateStack.top()][ruleLeft[r]]);
-                // semantics(r);
+                semantics(r);
             }
             else{
                 syntaxError();

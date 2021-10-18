@@ -13,7 +13,7 @@
 #define IS_REDUCTION(p) ((p)<0)
 #define RULE(p) (-(p))
 
-//Scope Rules
+//Regras
 
 #define DF_RULE 7
 

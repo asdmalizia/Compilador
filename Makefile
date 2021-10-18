@@ -47,7 +47,5 @@ build/src/libcsv.o: src/libcsv.c
 build/src/analisadores/analisador_lexico.o: include/analisador_lexico.h
 build/src/analisadores/analisador_sintatico.o: include/analisador_sintatico.hpp
 build/src/analisadores/analisador_sintatico.o: include/analisador_lexico.h
-build/src/analisadores/analisador_sintatico.o: include/csv.h
 build/src/main.o: include/analisador_lexico.h include/analisador_sintatico.hpp
-# build/src/main.o: include/analisador_escopo.hpp 
-build/src/libcsv.o: include/csv.h
+build/src/main.o: include/analisador_escopo.hpp 
