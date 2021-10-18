@@ -1,5 +1,3 @@
-type id = string
-
 function fun1 ( id : string ) : integer {
 	var c : boolean;
 	var a : integer;

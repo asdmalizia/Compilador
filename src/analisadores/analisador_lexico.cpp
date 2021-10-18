@@ -1,6 +1,7 @@
 #include "analisador_lexico.h"
 #include <vector>
 #include <stdlib.h>
+#include <cstring>
 
 using namespace std;
 
@@ -53,7 +54,7 @@ t_token nextToken(){
         token = STRINGVAL;
         tokenSecundario = addStringConst(str);
     } else if (nextChar == '\0') {
-        return END;
+        return ENDFILE;
     } else {
         switch(nextChar) {
             case '\'':
@@ -287,6 +288,9 @@ char getCharConst(int n){
 int  getIntConst(int n){
     return constantList[n]->_.nVal;
 }
-string getStringConst(int n){
-    return *(constantList[n]->_.sVal);
+char* getStringConst(int n){
+    string str = *(constantList[n]->_.sVal);
+    char *cstr = new char[str.length() + 1];
+    strcpy(cstr, str.c_str());
+    return cstr;
 }

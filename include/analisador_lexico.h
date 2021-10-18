@@ -23,7 +23,7 @@ CHARACTER, NUMERAL, STRINGVAL, IDT,
 UNKNOWN,
 
 // fim do arquivo
-END
+ENDFILE
 } t_token;
 
 typedef struct {
@@ -56,7 +56,7 @@ int addStringConst(string s);
 
 char getCharConst(int n);
 int  getIntConst(int n);
-string getStringConst(int n);
+char* getStringConst(int n);
 
 char readChar();
 

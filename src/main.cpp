@@ -3,8 +3,8 @@
 #include <stdlib.h> 
 
 #include "analisador_lexico.h"
-#include "analisador_sintatico.h"
-#include "analisador_de_escopo.h"
+#include "analisador_sintatico.hpp"
+// #include "analisador_escopo.hpp"
 #include <errno.h>
 
 void ERROR_FUNC(){
@@ -61,14 +61,14 @@ int main(int argc, char const *argv[])
     //     }
     //     if (token == STRINGVAL){
     //         printf("STRING ");
-    //         printf("id=%d %s ", tokenSecundario, getStringConst(tokenSecundario).c_str());
+    //         printf("id=%d %s ", tokenSecundario, getStringConst(tokenSecundario));
     //     }
     //     if (token == IDT){
     //         printf("ID ");
     //         printf("id=%d ", tokenSecundario);
     //     }
     //     printf("\n");
-    // } while(token != END);
+    // } while(token != ENDFILE);
     parse();
     return 0;
 }
