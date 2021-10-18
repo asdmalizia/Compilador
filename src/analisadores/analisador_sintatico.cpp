@@ -15,7 +15,6 @@ int ruleLen[] = {2,2,2,1,1,1,1,10,9,10,5,5,3,3,1,5,5,3,0,4,3,3,2,2,1,2,1,2,2,7,8
 
 int ruleLeft[] = {ACCEPT,P,LDE,LDE,DE,DE,DE,DF,DT,DT,DT,DC,DC,LI,LI,DV,LP,LP,LP,B,B,B,B,LDV,LDV,LS,LS,S,S,S,S,S,S,S,S,S,E,E,E,E,L,L,L,L,L,L,L,R,R,R,K,K,K,F,F,F,F,F,F,F,F,F,F,F,F,F,F,LE,LE,LE,LV,LV,LV,T,T,T,T,T,TRU,FALS,CHR,STR,NUM,IDD,IDU,ID,NB,MF,MC,NF,MT,ME,MW,MA};
 
-/*PARSER*/
 
 void initializeActionTable();
 
@@ -37,7 +36,6 @@ void parse(){
     stateStack.push(q);
     int a = nextToken();
     do{
-        // cout << "PARSER: " << " STATE " << q << " token " << a << endl;
         if(actionTable[q].count(a) < 1){
             syntaxError();
         }
@@ -49,9 +47,7 @@ void parse(){
             }
             else if(IS_REDUCTION(p)){
                 int r = RULE(p);
-                // cout << "RULE " << r << endl;
                 for(int i = 0;i<ruleLen[r];i++){
-                    // cout << "POP " << stateStack.top() << endl;
                     stateStack.pop();
                 }
                 stateStack.push(actionTable[stateStack.top()][ruleLeft[r]]);

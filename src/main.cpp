@@ -14,32 +14,15 @@ void ERROR_FUNC(){
 
 int main(int argc, char const *argv[])
 {
-    // BEGIN command line inputs
-    std::string input_file_name = "programa";
-    std::string output_file_name = "output";
-    if (argc == 2) {
-        if (!strcmp(argv[1],"-o")) {
-            ERROR_FUNC();
-        } else {
-            input_file_name = argv[1];
-        }
-    } else if (argc == 3) {
-        if (!strcmp(argv[1], "-o")) {
-            output_file_name = argv[2];
-        } else {
-            ERROR_FUNC();
-        }
-    } else if (argc == 4) {
-        if (!strcmp(argv[1], "-o")) {
-            input_file_name = argv[3];
-            output_file_name = argv[2];
-        } else if (!strcmp(argv[2],"-o")) {
+    std::string input_file_name, output_file_name;
+     if (argc == 4) {
+        if (!strcmp(argv[2],"-o")) {
             input_file_name = argv[1];
             output_file_name = argv[3];
         } else {
             ERROR_FUNC();
         }
-    } else if (argc > 4) {
+    } else {
         ERROR_FUNC();
     }
     printf("input_file_name: %s\noutput_file_name: %s\n", input_file_name.c_str(), output_file_name.c_str());
