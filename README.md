@@ -1,10 +1,10 @@
 ## Setup
-#### Build
+### 1. Build
 In project folder, execute:
 
 `make`
 
-#### Run
+### 2. Run
 After building the application, run in project folder:
 
 `compilador [SCRIPT_NAME] -o [OUTPUT_FILE_NAME]`
@@ -19,7 +19,8 @@ Then, the output to the corresponding code would be:
 <table>
 <tr>
 <th>Coding example </th>
-<th>Corresponding lexical tokens output</th>
+<th>Lexical tokens</th>
+<th>Syntactical output</th>
 </tr>
 <tr>
 <td>
@@ -81,10 +82,35 @@ function factorial(n: integer) : integer {
 ```
 
 </td>
+<td>
+
+```txt
+
+BEGIN_FUNC 0 1 1
+	LOAD_VAR 0
+	LOAD_CONST 0
+	GT
+	TJMP_FW L0
+L1
+	LOAD_VAR 0
+	LOAD_VAR 0
+	LOAD_CONST 1
+	SUB
+	MUL
+	STORE_VAR 0
+	JMP_BW L1
+L0
+	LOAD_VAR 0
+	RET
+END_FUNC
+
+
+```
+</td>
 </tr>
 </table>
 
-#### Clean
+### 3. Clean
 Clean the generated files executing:
 
 `make clean`

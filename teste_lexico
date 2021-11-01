@@ -8,16 +8,3 @@ function fun1 ( id : string ) : integer {
 	while( a != b)
 		i = i+1;
 }
-
-function primo(n: integer): boolean {
-	var divisor: integer;
-	divisor = 2;
-	do {
-		if(mmc(n,divisor) == n){
-			return true;
-		} else {
-			divisor = divisor + 'a';
-		}
-	} while(divisor < sqrt(n));
-	return false;
-}

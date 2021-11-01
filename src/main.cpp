@@ -4,7 +4,7 @@
 
 #include "analisador_lexico.h"
 #include "analisador_sintatico.hpp"
-// #include "analisador_escopo.hpp"
+#include "analisador_escopo.hpp"
 #include <errno.h>
 
 void ERROR_FUNC(){
