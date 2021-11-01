@@ -87,11 +87,11 @@ function factorial(n: integer) : integer {
 ```txt
 
 BEGIN_FUNC 0 1 1
+L1
 	LOAD_VAR 0
 	LOAD_CONST 0
 	GT
 	TJMP_FW L0
-L1
 	LOAD_VAR 0
 	LOAD_VAR 0
 	LOAD_CONST 1
